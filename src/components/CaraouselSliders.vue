@@ -49,8 +49,6 @@ export default {
 
     const currentSlide = ref(slides[0]);
 
-    console.log("currentSlide", currentSlide.value);
-
     return {
       getPic,
       currentSlide,
