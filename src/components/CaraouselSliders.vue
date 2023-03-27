@@ -22,7 +22,7 @@
 </template>
 
 <script>
-import { ref, watch } from "vue";
+import { ref } from "vue";
 
 export default {
   props: {
@@ -32,13 +32,13 @@ export default {
       required: true,
     },
     previousSlideIndex: {
-      type: Array,
+      type: Number,
       default: 0,
-      required: Number,
+      required: true,
     },
   },
 
-  setup({ slides }) {
+  setup(props) {
     const getPic = (src) => {
       return require(`@/assets/images/${src}`);
     };
@@ -47,7 +47,7 @@ export default {
       return require(`@/assets/images/${src}`);
     };
 
-    const currentSlide = ref(slides[0]);
+    const currentSlide = ref(props.slides[0]);
 
     return {
       getPic,

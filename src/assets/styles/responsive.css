@@ -3,12 +3,9 @@
     .ips-carousel-mockup-wrapper {
         margin-right: 0px;
     }
-
-    /* .ips-mockup-small {
-        right: 271px;
-    } */
 }
 
+/* IPAD Air and IPAD mini */
 @media only screen and (min-width:768px) and (max-width:1280px) {
     .app-container {
         width: 80% !important;
@@ -17,9 +14,11 @@
     .wait-list-wrapper .wait-list-header {
         font-size: 40px;
     }
+
     .ips-mockup-small {
         left: 26px;
     }
+
     .ips-camera-pointers {
         right: 90px;
     }
@@ -65,7 +64,7 @@
 }
 
 
-
+/* Mobile devices */
 @media screen and (max-width: 768px) {
     .navbar {
         padding: 1rem 0;
@@ -149,9 +148,7 @@
     .ambient-bg {
         display: none;
     }
-    /* .ips-carousel-wrapper {
-        width: 100%;
-    } */
+
     .ips-img-small {
         left: 9.5%;
         display: inline-block;
