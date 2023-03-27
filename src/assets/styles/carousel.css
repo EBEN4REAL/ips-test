@@ -2,9 +2,9 @@
 .progress--container {
     display: flex;
     flex-direction: row;
-    width: 80vw;
-    padding: 10px 0;
     cursor: pointer;
+    padding: 10px 0;
+    width: 225px;
   }
   
   .progress-bar {

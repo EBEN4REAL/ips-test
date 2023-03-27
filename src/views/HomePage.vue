@@ -40,24 +40,24 @@
         </div>
       </div>
       <div
-        class="ips-carousel-wrapper position-relative col-md-6 col-md-6 col-sm-12 col-xs-12 col-lg-6"
+        class="position-relative col-md-6 col-md-6 col-sm-12 col-xs-12 col-lg-6"
+        :class="[deviceWidth >= 820 ? 'ips-carousel-wrapper': '']"
       >
+        <img
+          class="ips-img-small"
+          :src="
+            getPrevSlidePic(
+              sliders?.[previousSlideIndex - 1]?.smallImg ||
+                'carousel-photo-02.jpg'
+            )
+          "
+        />
         <caraousel-sliders
           :slides="carouselSlider"
           @get-pic="getPic"
           :key="() => key++"
         />
 
-        <div class="ips-mockup-small">
-          <img
-            :src="
-              getPrevSlidePic(
-                sliders?.[previousSlideIndex - 1]?.largeImg ||
-                  'carousel-photo-02.jpg'
-              )
-            "
-          />
-        </div>
         <timeline-sliders :sliders="sliders" />
       </div>
     </div>
@@ -65,7 +65,7 @@
 </template>
 
 <script>
-import { toRefs, reactive, watch, onMounted, computed } from "vue";
+import { toRefs, reactive, watch, onMounted, computed, ref } from "vue";
 import { useRouter } from "vue-router";
 import { gsap } from "gsap";
 import BaseInput from "@/components/BaseInput.vue";
@@ -138,16 +138,9 @@ export default {
       });
 
       gsap.to(`.slide-${state.activeIndex}`, {
-        duration: 0,
-        opacity: 1,
-        onComplete: () => {
-          state.activeIndex = (state.activeIndex + 1) % state.sliders.length;
-        },
-      });
-      gsap.to(".progress", {
         duration: 8,
         onComplete: () => {
-          gsap.set(".progress", { width: 0 });
+          state.activeIndex = (state.activeIndex + 1) % state.sliders.length;
           playSlideshow();
         },
       });
@@ -157,7 +150,23 @@ export default {
       return require(`@/assets/images/${src}`);
     };
 
+    const deviceWidth = ref(screen.width)
+
+    const getDeviceWidth = () => {
+      let screenWidth = window.innerWidth;
+
+      window.addEventListener("resize", function () {
+        let newScreenWidth = window.innerWidth;
+
+        if (newScreenWidth !== screenWidth) {
+          screenWidth = newScreenWidth;
+          deviceWidth.value = screenWidth
+        }
+      });
+    };
+
     onMounted(() => {
+      getDeviceWidth()
       playSlideshow();
 
       const progress = Array.from(document.querySelectorAll(".progress-bar"));
@@ -197,6 +206,7 @@ export default {
       getPrevSlidePic,
       carouselSlider,
       previousSlideIndex,
+      deviceWidth,
       ...toRefs(state),
     };
   },

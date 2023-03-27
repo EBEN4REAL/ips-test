@@ -1,7 +1,7 @@
 <template>
   <div class="ips-mockup-slide-wrapper">
-    <div class="row justify-content-around align-items-center mt-4">
-      <div class="progress--container">
+    <div style=" ">
+      <div class="progress--container mt-3">
         <div
           class="progress-bar"
           :class="[`progress-bar-${index}`]"
@@ -21,6 +21,6 @@ export default {
       default: () => [],
       required: true,
     },
-  }
+  },
 };
 </script>
