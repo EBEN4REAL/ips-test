@@ -158,22 +158,12 @@
 }
 
 
-
-
-
-/* .iphone-mockup {
-    max-width: 100%;
-    height: auto;
-    position: absolute;
-} */
-
 .ips-img-small {
-    left: calc(6.4% * 2);
+    left: 9.1%;
     display: inline-block;
     position: absolute;
-    top: 88%;
-    width: 40.3px;
-    height: 40.3px;
+    top: 87.1%;
+    width: 12%;
     transform: translate(10%, -50%);
     z-index: 1;
 }
