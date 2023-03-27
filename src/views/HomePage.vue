@@ -147,18 +147,9 @@ export default {
       gsap.to(".progress", {
         duration: 8,
         onComplete: () => {
-          // gsap.set(".progress", { width: 0 });
           playSlideshow();
         },
       });
-
-      // gsap.to(`.slide-${state.activeIndex}`, {
-      //   duration: 8,
-      //   onComplete: () => {
-      //     state.activeIndex = (state.activeIndex + 1) % state.sliders.length;
-      //     playSlideshow();
-      //   },
-      // });
     };
 
     const getPrevSlidePic = (src) => {
