@@ -51,7 +51,7 @@
         <caraousel-sliders
           :slides="carouselSlider"
           @get-pic="getPic"
-         
+          :key="() => key++"
         />
 
         <timeline-sliders :sliders="sliders" />
@@ -86,6 +86,7 @@ export default {
 
       sliders,
       activeIndex: 0,
+      key:0
     });
 
     const router = useRouter();

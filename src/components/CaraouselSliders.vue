@@ -22,7 +22,7 @@
 </template>
 
 <script>
-import { ref } from "vue";
+import { ref, watch } from "vue";
 
 export default {
   props: {
@@ -46,6 +46,10 @@ export default {
     const getPrevSlidePic = (src) => {
       return require(`@/assets/images/${src}`);
     };
+
+    watch(() => props.slides, (slides) => {
+      console.log('52', slides[0] );
+    });
 
     const currentSlide = ref(props.slides[0]);
 
