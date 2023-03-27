@@ -150,11 +150,20 @@
     }
 
     .ips-img-small {
-        left: 9.5%;
+        /* left: 9.8%;
         display: inline-block;
         position: absolute;
-        top: 87.5%;
-        width: 12%;
+        top: 87%;
+        width: 41.3px;
+        transform: translate(10%, -50%);
+        z-index: 1;
+        height: 41.3px; */
+        left: calc(4.7% * 2);
+        display: inline-block;
+        position: absolute;
+        top: 87.1%;
+        width: 46.3px;
+        height: 41.3px;
         transform: translate(10%, -50%);
         z-index: 1;
     }

@@ -1,5 +1,28 @@
 
 
+:root {
+    --app-bg-color: #0F0F0F;
+    --white-color: #fff;
+    --badge-color: #2B5341;
+    --dark-gray-color: #171715;
+    --light-gray-color: #3A3A3A;
+    --input-text-color: #eeecec;
+    --btn-right-border-color: #9c1c6f;
+    --btn-left-border-color: #bc1b52;
+    --btn-left-bg-gradient: #370C14;
+    --btn-right-bg-gradient: #280C23;
+    --btn-box-shadow-color: rgba(0, 0, 0, 0.15);
+    --label-color: #333;
+    --form-danger-color: #dc1b3e;
+    --slide-color: #3A3A3A;
+    --btn-hover-color: white;
+    --btn-left-bg-gradient-hover: #3d0b15;
+    --btn-right-bg-gradient-hover: rgb(61, 12, 21);
+    --progress-bg: #EEECEC;
+    --gray-color: gray;
+}
+
+
 * {
     padding: 0;
     margin: 0;
