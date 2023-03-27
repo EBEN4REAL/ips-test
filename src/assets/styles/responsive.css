@@ -150,14 +150,6 @@
     }
 
     .ips-img-small {
-        /* left: 9.8%;
-        display: inline-block;
-        position: absolute;
-        top: 87%;
-        width: 41.3px;
-        transform: translate(10%, -50%);
-        z-index: 1;
-        height: 41.3px; */
         left: calc(4.7% * 2);
         display: inline-block;
         position: absolute;
