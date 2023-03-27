@@ -29,10 +29,7 @@
               label="Enmail"
               :formError="formError"
             />
-            <ips-button
-              :formError="formError"
-              type="submit"
-            >
+            <ips-button :formError="formError" type="submit">
               Please Notify Me
             </ips-button>
           </form>
@@ -40,7 +37,7 @@
       </div>
       <div
         class="position-relative col-md-6 col-md-6 col-sm-12 col-xs-12 col-lg-6"
-        :class="[deviceWidth >= 820 ? 'ips-carousel-wrapper': '']"
+        :class="[deviceWidth >= 820 ? 'ips-carousel-wrapper' : '']"
       >
         <img
           class="ips-img-small"
@@ -72,6 +69,7 @@ import IpsButton from "@/components/IpsButton.vue";
 import CaraouselSliders from "@/components/CaraouselSliders.vue";
 import TimelineSliders from "@/components/TimelineSliders.vue";
 import { sliders } from "@/constants";
+import debounce from "lodash.debounce";
 
 export default {
   components: {
@@ -155,23 +153,25 @@ export default {
       return require(`@/assets/images/${src}`);
     };
 
-    const deviceWidth = ref(screen.width)
+    const deviceWidth = ref(screen.width);
 
     const getDeviceWidth = () => {
       let screenWidth = window.innerWidth;
 
-      window.addEventListener("resize", function () {
+      const debounceResizing = debounce(() => {
         let newScreenWidth = window.innerWidth;
 
         if (newScreenWidth !== screenWidth) {
           screenWidth = newScreenWidth;
-          deviceWidth.value = screenWidth
+          deviceWidth.value = screenWidth;
         }
-      });
+      }, 80);
+
+      window.addEventListener("resize", debounceResizing);
     };
 
     onMounted(() => {
-      getDeviceWidth()
+      getDeviceWidth();
       playSlideshow();
 
       const progress = Array.from(document.querySelectorAll(".progress-bar"));

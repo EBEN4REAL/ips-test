@@ -159,4 +159,7 @@
         transform: translate(10%, -50%);
         z-index: 1;
     }
+    .wait-list-badge {
+        margin-top: 79px;
+    }
 }
