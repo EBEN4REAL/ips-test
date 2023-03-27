@@ -138,12 +138,27 @@ export default {
       });
 
       gsap.to(`.slide-${state.activeIndex}`, {
-        duration: 8,
+        duration: 0,
+        opacity: 1,
         onComplete: () => {
           state.activeIndex = (state.activeIndex + 1) % state.sliders.length;
+        },
+      });
+      gsap.to(".progress", {
+        duration: 8,
+        onComplete: () => {
+          // gsap.set(".progress", { width: 0 });
           playSlideshow();
         },
       });
+
+      // gsap.to(`.slide-${state.activeIndex}`, {
+      //   duration: 8,
+      //   onComplete: () => {
+      //     state.activeIndex = (state.activeIndex + 1) % state.sliders.length;
+      //     playSlideshow();
+      //   },
+      // });
     };
 
     const getPrevSlidePic = (src) => {
