@@ -30,7 +30,6 @@
               :formError="formError"
             />
             <ips-button
-              @submit-form="submitForm"
               :formError="formError"
               type="submit"
             >
