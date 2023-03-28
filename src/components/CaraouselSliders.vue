@@ -4,7 +4,7 @@
       src="@/assets/images/FE-test-assets.svg"
       class="ips-camera-pointers img-fluid"
     />
-    <div class="ambient-bg" :style="{ boxShadow: currentSlide.shadow }"></div>
+    <div class="ambient-bg" :style="{ boxShadow: slides[0].shadow }"></div>
 
     <img src="@/assets/images/iPhone-mokup.png" class="iphone-mockup" />
     <div
@@ -22,7 +22,6 @@
 </template>
 
 <script>
-import { ref, watch } from "vue";
 
 export default {
   props: {
@@ -38,7 +37,7 @@ export default {
     },
   },
 
-  setup(props) {
+  setup() {
     const getPic = (src) => {
       return require(`@/assets/images/${src}`);
     };
@@ -47,15 +46,8 @@ export default {
       return require(`@/assets/images/${src}`);
     };
 
-    watch(() => props.slides, (slides) => {
-      console.log('52', slides[0] );
-    });
-
-    const currentSlide = ref(props.slides[0]);
-
     return {
       getPic,
-      currentSlide,
       getPrevSlidePic,
     };
   },

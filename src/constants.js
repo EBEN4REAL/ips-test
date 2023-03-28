@@ -23,5 +23,17 @@ export const sliders = [
       smallImg: "small-carousel-photo-02.jpg",
       shadow: " -93px -53px 166px -63px rgba(56,97,103, 0.15)"
     },
+    {
+        largeImg: "carousel-photo-02.jpg",
+        active: false,
+        smallImg: "small-carousel-photo-02.jpg",
+        shadow: " -93px -53px 166px -63px rgba(56,97,103, 0.15)"
+    },
+    {
+        largeImg: "carousel-photo-02.jpg",
+        active: false,
+        smallImg: "small-carousel-photo-02.jpg",
+        shadow: " -93px -53px 166px -63px rgba(56,97,103, 0.15)"
+      },
   ];
   
